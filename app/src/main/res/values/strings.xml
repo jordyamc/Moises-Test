@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Moises Test</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="no_desc">Sin Descripcion</string>
+
+    <string name="desc_jaguar">Descripcion jaguar</string>
+    <string name="desc_mono_aullador">Descripcion Mono Aullador</string>
+    <string name="desc_nutria">Descripcion Nutria</string>
+    <string name="desc_panda_rojo">Descripcion Panda Rojo</string>
+    <string name="desc_pinguino">Descripcion Pinguino</string>
+    <string name="desc_tapir">Descripcion Tapir</string>
+</resources>
