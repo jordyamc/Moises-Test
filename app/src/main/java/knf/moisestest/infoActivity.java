@@ -32,18 +32,6 @@ public class infoActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         button = (FloatingActionButton) findViewById(R.id.fab);
         button.hide();
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        button.setVisibility(View.GONE);
-                    }
-                });
-                finish();
-            }
-        });
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
             getWindow().setNavigationBarColor(getResources().getColor(R.color.colorPrimary));
@@ -53,6 +41,12 @@ public class infoActivity extends AppCompatActivity {
         setChildTextView(toolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
         ((ImageView) findViewById(R.id.img)).setImageResource(getIntent().getExtras().getInt("img", R.drawable.not_found));
         ((TextView) findViewById(R.id.description)).setText(getIntent().getExtras().getInt("desc", R.string.no_desc));
         showCard();
